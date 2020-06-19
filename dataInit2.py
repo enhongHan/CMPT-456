@@ -6,9 +6,7 @@ import re
 
 f=codecs.open("D22.txt","w",encoding='utf8')
 f.close()
-f2=codecs.open("D12.txt","w",encoding='utf8')
-f2.close()
-tweet_covid_set=got.manager.TweetCriteria().setQuerySearch('#COVID-19').setSince('2020-02-01').setMaxTweets(1000)
+tweet_covid_set=got.manager.TweetCriteria().setQuerySearch('#COVID-19').setLang('en').setSince('2020-02-01').setMaxTweets(1500)
 tweets_covid=got.manager.TweetManager.getTweets(tweet_covid_set)
 for idx,tweet in enumerate(tweets_covid):
 	txt=str(tweet.text)

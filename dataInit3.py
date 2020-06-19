@@ -7,7 +7,7 @@ import re
 f=codecs.open("D12.txt","w",encoding='utf8')
 f.close()
 #for the getoldtweets it must search something to get result so I use 'a' here which is has high freq in english
-tweet_Nohashtag_set = got.manager.TweetCriteria().setQuerySearch('a').setSince('2020-02-01').setMaxTweets(1000)
+tweet_Nohashtag_set = got.manager.TweetCriteria().setLang('en').setQuerySearch('a').setSince('2020-02-01').setMaxTweets(1500)
 tweets_Nohashtag = got.manager.TweetManager.getTweets(tweet_Nohashtag_set)
 for idx, tweet2 in enumerate(tweets_Nohashtag):
 	txt=str(tweet2.text)
